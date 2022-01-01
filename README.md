@@ -33,7 +33,7 @@ cd URL-UploadBot
 pip3 install -r requirements.txt
 # <Create config.py appropriately>
 python3 bot.py
-```
+``
 
 ### Commands
 
