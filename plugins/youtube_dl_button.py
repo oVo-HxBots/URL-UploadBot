@@ -325,9 +325,9 @@ async def youtube_dl_call_back(bot, update):
             media_album_p = []
             if images is not None:
                 i = 0
-                caption = "@HxBots | [@oVo-HxBots](https://GitHub.com/oVo-HxBots) | [@oVoIndia](https://GitHub.com/oVoIndia)"
+                caption = "@HxBots | <a href='https://GitHub.com/oVo-HxBots'>@Ovo-HxBots</a> | <a href='https://GitHub.com/oVoIndia'>@OVoIndia</a>"
                 if is_w_f:
-                    caption = "HxBots | [@oVo-HxBots](https://GitHub.com/oVo-HxBots) | [@oVoIndia](https://GitHub.com/oVoIndia)"
+                    caption = "@HxBots | <a href='https://GitHub.com/oVo-HxBots'>@Ovo-HxBots</a> | <a href='https://GitHub.com/oVoIndia'>@OVoIndia</a>"                
                 for image in images:
                     if os.path.exists(str(image)):
                         if i == 0:
