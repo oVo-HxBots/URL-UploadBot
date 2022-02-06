@@ -1,45 +1,38 @@
-## Made from [@AnyDLBot](https://telegram.dog/Hx_AnyDLBot)
+﻿## HX-URL-Uploader (Bot)
+---
 
-ALL CREDITS GOES TO THE BELOVED DEVELOPERS :)
+Telegram RoBot to Upload Links.
 
-#### If you find any bugs, report at Group [@HxSupport](https://telegram.dog/HxSupport)
+**Features**:
 
-### Features
+~Only Auth Users (AUTH_USERS) Can Use The Bot~
 
-👉 All Supported Video Formats of https://rg3.github.io/youtube-dl/supportedsites.html
+👉 Upload [YTDL Supported Links](https://ytdl-org.github.io/youtube-dl/supportedsites.html) to Telegram.
 
-👉 Upload as file from any HTTP link
+👉 Upload HTTP/HTTPS as File/Video to Telegram.
 
-👉 Permanent thumbnail support.
+👉 Upload Mediafire, Zippyshare, Hxfile, Anonfiles, Antfiles URL using LK21
 
-👉 Added HOTSTAR Link Support!!  (Won't work on European Servers!!)
+## Telegram Support:
 
-
-
-### Installation
-
-#### The Easiest Way
-
-**Upgrade** your subscription for [@HxUrlUploadBot](https://telegram.dog/Hx_UrlUploadBot) without having to run anything on your own
-
-#### Deploy to Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?)
-
-#### Run in your VPS
-```sh
-git clone https://github.com/oVo-HxBots/URL-UploadBot
-cd URL-UploadBot
-pip3 install -r requirements.txt
-# <Create config.py appropriately>
-python3 bot.py
-```
+[![Channel](https://img.shields.io/badge/TG-Channel-30302f?style=flat&logo=telegram)](https://t.me/hxBots)
+[![Group](https://img.shields.io/badge/TG-Group-30302f?style=flat&logo=telegram)](https://t.me/hxSupport)
 
 ### Commands
 
 * start             - Check if bot is alive
 * help              - To know how the bot works
-* upgrade           - Nothing much here
-* deletethumbnail   - Clear saved thumbnail
+* upgrade           - Nothing mul
+* showthumb       bnail   - Clear saved thumbnail
 * showthumb         - Show saved thumbnail
 * donate            - Donate the creator
+
+## Credits, and Thanks to:
+
+* [@TGExplore](https://t.me/ViruZs) for his [TG-URL-Uploader](https://github.com/TGExplore/TG-URL-Uploader)
+* [@SpEcHlDe](https://t.me/ThankTelegram) for his [AnyDLBot](https://telegram.dog/AnyDLBot)
+* [Dan Tès](https://t.me/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
+* [Yoily](https://t.me/YoilyL) for his [UploaditBot](https://telegram.dog/UploaditBot)
+
+#### LICENSE
+- GPLv3
