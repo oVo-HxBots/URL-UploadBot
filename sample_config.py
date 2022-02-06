@@ -27,4 +27,4 @@ class Config(object):
     # set timeout for subprocess
     PROCESS_MAX_TIMEOUT = 3600
     # watermark file
-        DEF_WATER_MARK_FILE = "@HxBots | [@oVo-HxBots](https://GitHub.com/oVo-HxBots) | [@oVoIndia](https://GitHub.com/oVoIndia)"
+    DEF_WATER_MARK_FILE = "@HxBots | [@oVo-HxBots](https://GitHub.com/oVo-HxBots) | [@oVoIndia](https://GitHub.com/oVoIndia)"
