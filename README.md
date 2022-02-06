@@ -23,11 +23,10 @@ Only Auth Users (AUTH_USERS) Can Use The Bot
 
 ### Commands
 
-* start             - Check if bot is alive
-* help              - To know how the bot works
-* ~upgrade           - Nothing mul~
-* ~showthumb       bnail   - Clear saved thumbnail~
-* ~showthumb         - Show saved thumbnail~
+* start              - Check if bot is alive
+* help               - Get some help 
+* delthumbnail       - Clear saved thumbnail
+* genthumbnail       - Show saved thumbnail
 * ~donate            - Donate the creator~
 
 ## Credits, and Thanks to:
