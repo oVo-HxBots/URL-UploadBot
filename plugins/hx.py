@@ -1,5 +1,7 @@
-# LISA 🖤💗
 
+# (c) Shrimadhav U K | Modifieded By @oVo-HxBots
+
+# the logging things
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -24,41 +26,20 @@ from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
 
-async def ddl_call_back(bot, update):
+async def hx_call_back(bot, update):
     #logger.info(update)
     cb_data = update.data
     # youtube_dl extractors
-    tg_send_type, youtube_dl_format, youtube_dl_ext = cb_data.split("=")
-    youtube_dl_url = update.message.reply_to_message.text
+    tg_send_type, youtube_dl_format, youtube_dl_ext, youtube_dl_url = cb_data.split("|")
+    #youtube_dl_url = update.message.reply_to_message.text
     thumb_image_path = Config.DOWNLOAD_LOCATION + \
         "/" + str(update.from_user.id) + ".jpg"
     custom_file_name = os.path.basename(youtube_dl_url)
-    if " * " in youtube_dl_url:
-        url_parts = youtube_dl_url.split("|")
+    if " * " in update.message.reply_to_message.text:
+        url_parts = update.message.reply_to_message.text.split("|")
         if len(url_parts) == 2:
-            youtube_dl_url = url_parts[0]
+            #youtube_dl_url = url_parts[0]
             custom_file_name = url_parts[1]
-        else:
-            for entity in update.message.reply_to_message.entities:
-                if entity.type == "text_link":
-                    youtube_dl_url = entity.url
-                elif entity.type == "url":
-                    o = entity.offset
-                    l = entity.length
-                    youtube_dl_url = youtube_dl_url[o:o + l]
-        if youtube_dl_url is not None:
-            youtube_dl_url = youtube_dl_url.strip()
-        if custom_file_name is not None:
-            custom_file_name = custom_file_name.strip()
-        # https://stackoverflow.com/a/761825/4723940
-    else:
-        for entity in update.message.reply_to_message.entities:
-            if entity.type == "text_link":
-                youtube_dl_url = entity.url
-            elif entity.type == "url":
-                o = entity.offset
-                l = entity.length
-                youtube_dl_url = youtube_dl_url[o:o + l]
     
     description = custom_file_name
     if not "." + youtube_dl_ext in custom_file_name:
@@ -120,9 +101,7 @@ async def ddl_call_back(bot, update):
                 message_id=update.message.message_id
             )
         else:
-            # ref: message from @SOURCES_CODES
             start_time = time.time()
-            # try to upload file
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumb_image_path = await Gthumb01(bot, update)
@@ -137,7 +116,6 @@ async def ddl_call_back(bot, update):
                     progress_args=(
                         Translation.UPLOAD_START,
                         update.message,
-                        custom_file_name,
                         start_time
                     )
                 )
@@ -153,7 +131,6 @@ async def ddl_call_back(bot, update):
                     progress_args=(
                         Translation.UPLOAD_START,
                         update.message,
-                        custom_file_name,
                         start_time
                     )
                 )
@@ -171,7 +148,6 @@ async def ddl_call_back(bot, update):
                     progress_args=(
                         Translation.UPLOAD_START,
                         update.message,
-                        custom_file_name,
                         start_time
                     )
                 )
@@ -192,7 +168,6 @@ async def ddl_call_back(bot, update):
                     progress_args=(
                         Translation.UPLOAD_START,
                         update.message,
-                        custom_file_name,
                         start_time
                     )
                 )
