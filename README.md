@@ -19,12 +19,14 @@
 
   ㅤ ㅤ   ㅤ <a href="https://github.com/oVo-HxBots/URL-UploadBot/fork"><img alt="Fork and deploy" src="https://img.shields.io/badge/-Fork%20And%20Deploy-black?style=for-the-badge&logo=github&logoColor=white"/></a> 
 
+### Deploy To Render (Paid)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?)
+  
 
 ### Deploy To Heroku (No warranty)
 
   ㅤ ㅤ   ㅤ <a href="https://dashboard.heroku.com/new?template=https://github.com/oVo-HxBots/URL-UploadBot"><img alt="heroku" src="https://img.shields.io/badge/-Deploy%20To%20Heroku-purple?style=for-the-badge&logo=heroku&logoColor=white"/></a> 
-
 
 ### How to create mongoDB url video [YouTube Link](https://youtu.be/VudXkbirhM8)
 
