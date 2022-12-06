@@ -1,0 +1,25 @@
+services:
+  # A background worker that consumes a queue
+  - type: worker
+    name: UrlUploadBotV3
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    repo: https://github.com/oVo-HxBots/URL-UploadBot.git
+    branch: main
+    envVars:
+      - key: BOT_TOKEN 
+        sync: false
+      - key: API_ID 
+        sync: false
+      - key: API_HASH 
+        sync: false
+      - key: SESSION_NAME 
+        value: urluploadbot
+      - key: DOWNLOAD_LOCATION 
+        value: ./DOWNLOADS
+      - key: OWNER_ID 
+        sync: false 
+      - key: DATABASE_URL 
+        sync: false
+    autoDeploy: false # optional
