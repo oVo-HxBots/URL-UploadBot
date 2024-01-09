@@ -21,11 +21,6 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 @Hxbots.on_message(filters.private & filters.command(["cancel"]))
 async def cancel_process(bot, update):
-   global cancel
-    cancel = True
-    await editable.edit("cancled")
-    return
-    else:
     save_ytdl_json_path = Config.DOWNLOAD_LOCATION + "/" + str(update.chat.id) + ".json"
     if os.path.exists(save_ytdl_json_path):
         os.remove(save_ytdl_json_path)
