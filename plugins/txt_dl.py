@@ -27,6 +27,15 @@ import os
 from os import environ
 # import pycurl
 
+
+bot = Client(
+    "bot",
+    bot_token=environ.get('BOT_TOKEN'), 
+    api_id=int(environ.get('API_ID')), 
+    api_hash=environ.get('API_HASH'),
+    workers= 6)
+
+
 @bot.on_message(filters.command(["txt_dl"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("**Hi!, I Can Download All Links In A Txt File & Send Them To You.\n\nUse /help To Get Some Help 😉\n\n Now Send .txt file**")
