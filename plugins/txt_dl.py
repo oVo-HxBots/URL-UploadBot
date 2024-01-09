@@ -12,7 +12,7 @@ from pyrogram import Client, filters
 import tgcrypto
 from helper_funcs.p_bar import progress_bar
 from subprocess import getstatusoutput
-import helper
+from helper_funcs.dl_helper import *
 import logging
 import time
 import aiohttp
