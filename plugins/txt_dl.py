@@ -60,7 +60,7 @@ async def account_login(bot: Client, m: Message):
         return
 
     editable = await m.reply_text(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**")
-    input1: Message = await bot.listen(editable.chat.id)
+    input1: Message = await Chat.listen(editable.chat.id)
     raw_text = input1.text
 
 
@@ -71,16 +71,16 @@ async def account_login(bot: Client, m: Message):
     
     
     editable = await m.reply_text("**Enter Title For File. Send 'de' To Use Default File Name.**")
-    input0: Message = await bot.listen(editable.chat.id)
+    input0: Message = await Chat.listen(editable.chat.id)
     raw_text0 = input0.text
     
     await m.reply_text("**`Enter Resolution \nExamples: | 144 | 180 | 240 | 360 | 480 | 720 |\n Without | |`**")
-    input2: Message = await bot.listen(editable.chat.id)
+    input2: Message = await Chat.listen(editable.chat.id)
     raw_text2 = input2.text
     
     await editable.edit("**Enter Your Name or send `de` for use default file Name**")
 
-    input3: Message = await bot.listen(editable.chat.id)
+    input3: Message = await Chat.listen(editable.chat.id)
     raw_text3 = input3.text
     if raw_text3 == 'de':
         CR = credit
@@ -89,7 +89,7 @@ async def account_login(bot: Client, m: Message):
 
     await m.reply_text("Now send the **Thumb url**\nEg : ```https://telegra.ph/Abhi-04-08```\n\nor Send **no**")
   
-    input4: Message = await bot.listen(editable.chat.id)
+    input4: Message = await Chat.listen(editable.chat.id)
     raw_text4 = input6.text
 
     thumb = input4.text
