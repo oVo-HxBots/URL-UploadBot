@@ -26,7 +26,7 @@ class Config(object):
     
     OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 
-    SESSION_NAME = "UploadLinkToFileBot"
+    SESSION_NAME = "URL-UploadBot"
     
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
