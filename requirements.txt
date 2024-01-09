@@ -15,7 +15,7 @@ numpy
 olefile
 Pillow
 pycurl
-pyrogram==1.4.16
+pyrogram==1.4.12
 pyromod==1.5
 requests
 tgcrypto
