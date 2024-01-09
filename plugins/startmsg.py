@@ -1,7 +1,18 @@
+import requests
+import json
+import pyrogram
+import tgcrypto
+import logging
+import time
+import aiohttp
+import asyncio
+import aiofiles
+
+
 class Translation(object):
     START_TEXT = """Hi {} 👋
 
-I'm Url Upload Bot 🚀
+I'm Url-UploadBot V4 🚀
 
 <b>Permanent Thumbnail Support💯.</b>
 
@@ -45,13 +56,23 @@ You can now send a new URL."""
 
 5.  Use /caption to Set caption as Reply to Media
 
-6. Comments /about /viewthumbnail /info
+6.This Bot Can Also Download From Files.
+                 ` **Steps To Use Bot:**
+    **i:** Send /start & then send your .txt file.
+    **ii:** Now Send From Where You Want To Download Initial is 0 .
+    **iii:** Now Send Your File Name or Use `de` For. Use Default File Name.
+    **iv:** Now Send Resolution In Which Quality You Want.
+    **v:** Now Againg Send /start.\
+    **vi:** Now Send Custom Thum URL or Send `no` to Use Defalut Thumbnail.
+    **vii:** Now Wait Bot will Download & Upload Your Videos.`
+    
+7. Comments /about /viewthumbnail /info /txt-dl
 """
     ABOUT_TEXT = """<b>🔘 My Name :</b> URL-UploadBot V3 🚀
 
 <b>🔘 Channel :</b> <a href="https://t.me/HxBots">HxBots</a>
 
-<b>🔘 Source :</b> <a href="https://github.com/oVo-HxBots/URL-UploadBot">Soon..</a>
+<b>🔘 Source :</b> <a href="https://github.com/oVo-HxBots/URL-UploadBot">Guthub</a>
 
 <b>🔘 Language :</b> <a href="https://www.python.org/">Python 3.10.8</a>
 
