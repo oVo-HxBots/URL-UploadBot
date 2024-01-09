@@ -16,7 +16,7 @@ olefile
 Pillow
 pycurl
 pyrogram==1.4.12
-pyromod==1.5
+pyromod
 requests
 tgcrypto
 tldextract
