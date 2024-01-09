@@ -8,7 +8,7 @@ from pyrogram.errors import FloodWait
 from pyromod import listen
 from pyrogram.types import Message
 import pyrogram
-from pyrogram import Client as bot, filters
+from pyrogram import Client, filters
 import tgcrypto
 from p_bar import progress_bar
 from subprocess import getstatusoutput
