@@ -10,7 +10,7 @@ from pyrogram.types import Message
 import pyrogram
 from pyrogram import Client, filters
 import tgcrypto
-from p_bar import progress_bar
+from helper_funcs.p_bar import progress_bar
 from subprocess import getstatusoutput
 import helper
 import logging
