@@ -5,7 +5,7 @@ from pyrogram import Client,filters
 from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import FloodWait
-from pyromod import listen
+import pyromod.listen
 from pyrogram.types import Message
 import pyrogram
 from pyrogram import Client, filters
@@ -39,7 +39,7 @@ bot = Client(
 @bot.on_message(filters.command(["txt_dl"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("**Hi!, I Can Download All Links In A Txt File & Send Them To You.\n\nUse /help To Get Some Help 😉\n\n Now Send .txt file**")
-    input: Message = await bot.listen(editable.chat.id)
+    input: Message = await Chat.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
 
