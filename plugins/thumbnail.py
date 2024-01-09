@@ -16,7 +16,7 @@ import time
 from config import Config
 # the Strings used for this "thing"
 from plugins.startmsg import Translation
-from pyrogram import Client as Clinton
+from pyrogram import Client as Hxbots
 from database.access import clinton
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
@@ -25,19 +25,19 @@ from pyrogram import filters
 from database.adduser import AddUser
 from helper_funcs.help_Nekmo_ffmpeg import take_screen_shot
 
-@Clinton.on_message(filters.private & filters.photo)
+@Hxbots.on_message(filters.private & filters.photo)
 async def save_photo(bot, update):
     await AddUser(bot, update)
     await clinton.set_thumbnail(update.from_user.id, thumbnail=update.photo.file_id)
     await bot.send_message(chat_id=update.chat.id, text=Translation.SAVED_CUSTOM_THUMB_NAIL, reply_to_message_id=update.message_id)
 
-@Clinton.on_message(filters.private & filters.command("delthumbnail"))
+@Hxbots.on_message(filters.private & filters.command("delthumbnail"))
 async def delthumbnail(bot, update):
     await AddUser(bot, update)
     await clinton.set_thumbnail(update.from_user.id, thumbnail=None)
     await bot.send_message(chat_id=update.chat.id, text=Translation.DEL_ETED_CUSTOM_THUMB_NAIL, reply_to_message_id=update.message_id)
 
-@Clinton.on_message(filters.private & filters.command("viewthumbnail") )
+@Hxbots.on_message(filters.private & filters.command("viewthumbnail") )
 async def viewthumbnail(bot, update):
     await AddUser(bot, update)
     thumbnail = await clinton.get_thumbnail(update.from_user.id)
