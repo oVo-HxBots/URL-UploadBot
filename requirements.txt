@@ -14,7 +14,7 @@ tldextract
 beautifulsoup4
 user_agent
 bs4
-pyrogram==1.4.16
+pyrogram
 pyromod==1.5
 ffmpeg
 asyncio
