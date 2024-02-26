@@ -100,7 +100,8 @@ async def echo(bot, update):
     stdout, stderr = await process.communicate()
     await bot.edit_message_text(
         text="<b>Processing... ⌛</b>",
-        chat_id=update.chat.id
+        chat_id=update.chat.id,
+        reply_to_message_id=update.id
     )
     time.sleep(0.7)
     e_response = stderr.decode().strip()
@@ -113,7 +114,7 @@ async def echo(bot, update):
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.NO_VOID_FORMAT_FOUND.format(str(error_message)),
-            reply_to_message_id=update.message_id,
+            reply_to_message_id=update.id,
             parse_mode="html",
             disable_web_page_preview=True
         )
