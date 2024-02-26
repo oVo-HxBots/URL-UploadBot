@@ -1,4 +1,3 @@
-# Modified by @LISA_FAN_LK | @UploadLinkToFileBot 
 
 import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -28,8 +27,7 @@ async def echo(bot, update):
     if os.path.exists(Config.DOWNLOAD_LOCATION + "/" + str(update.chat.id) + ".json"):
         await bot.edit_message_text(
             text=Translation.WAIT_PROCESS_FINISH,
-            chat_id=update.chat.id,
-            message_id=imog.message_id
+            chat_id=update.chat.id
         )
         return False
     youtube_dl_username = None
@@ -102,8 +100,7 @@ async def echo(bot, update):
     stdout, stderr = await process.communicate()
     await bot.edit_message_text(
         text="<b>Processing... ⌛</b>",
-        chat_id=update.chat.id,
-        message_id=imog.message_id
+        chat_id=update.chat.id
     )
     time.sleep(0.7)
     e_response = stderr.decode().strip()
