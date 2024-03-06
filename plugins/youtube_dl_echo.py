@@ -100,8 +100,8 @@ async def echo(bot, update):
     stdout, stderr = await process.communicate()
     await bot.edit_message_text(
         text="<b>Processing... ⌛</b>",
-        chat_id=update.chat.id
-    )
+        reply_to_message_id=update.id,
+        chat_id=update.chat.id)
     time.sleep(0.7)
     e_response = stderr.decode().strip()
     t_response = stdout.decode().strip()
