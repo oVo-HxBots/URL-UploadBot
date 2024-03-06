@@ -11,7 +11,7 @@ from config import Config
 # the Strings used for this "thing"
 from plugins.startmsg import Translation
 
-from pyrogram import filters
+from pyrogram import filters, enums
 from database.adduser import AddUser
 from pyrogram import Client as Clinton
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
@@ -26,7 +26,7 @@ async def cancel_process(bot, update):
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.PROCESS_CANCELLED,
-            parse_mode="html",
+            parse_mode=enums.ParseMode.HTML,
             disable_web_page_preview=True,
             reply_to_message_id=update.id
         )
@@ -34,7 +34,7 @@ async def cancel_process(bot, update):
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.NO_PROCESS_FOUND,
-            parse_mode="html",
+            parse_mode=enums.ParseMode.HTML,
             disable_web_page_preview=True,
             reply_to_message_id=update.id
         )
@@ -66,7 +66,7 @@ async def help_user(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.HELP_USER,
-        parse_mode="html",
+        parse_mode=enums.ParseMode.HTML,
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
         [
@@ -83,7 +83,7 @@ async def add_caption_help(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.ADD_CAPTION_HELP,
-        parse_mode="html",
+        parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=update.message_id
     )
 
@@ -92,7 +92,7 @@ async def about(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.ABOUT_TEXT,
-        parse_mode="html",
+        parse_mode=enums.ParseMode.HTML,
         reply_markup=InlineKeyboardMarkup(
         [
           [
@@ -133,6 +133,6 @@ async def add_info_help(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.INFO_TEXT.format(update.from_user.first_name, last_name, update.from_user.username, update.from_user.id, update.from_user.mention, update.from_user.dc_id, update.from_user.language_code, update.from_user.status),
-        #parse_mode="html",
+        #parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=update.id
     )
