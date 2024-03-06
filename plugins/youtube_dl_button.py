@@ -262,16 +262,16 @@ async def youtube_dl_call_back(bot, update):
                     )
                 )
             else:
-            thumbnail = await Gthumb01(bot, update)
-            await bot.send_document(chat_id=update.message.chat.id,
-            document=file_location,
-            thumb=thumbnail,
-            caption=description,
-            parse_mode=enums.ParseMode.HTML,
-            reply_to_message_id=update.id,
-            progress=progress_for_pyrogram,
-            progress_args=(Translation.UPLOAD_START, update.message, start_time))
-
+                    thumbnail = await Gthumb01(bot, update)
+                    await bot.send_document(chat_id=update.message.chat.id,
+                    document=file_location,
+                    thumb=thumbnail,
+                    caption=description,
+                    parse_mode=enums.ParseMode.HTML,
+                    reply_to_message_id=update.id,
+                    progress=progress_for_pyrogram,
+                    progress_args=(Translation.UPLOAD_START, update.message, start_time))
+ 
                 shutil.rmtree(tmp_directory_for_each_user)
                 os.remove(thumbnail)
             except:
