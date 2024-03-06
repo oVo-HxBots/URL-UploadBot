@@ -100,7 +100,7 @@ async def about(bot, update):
           ]
         ]
        ),
-       reply_to_message_id=update.message_id
+       reply_to_message_id=update.id
      )
 
 @Clinton.on_message(filters.private & filters.command(["start"]))
