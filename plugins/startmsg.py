@@ -93,3 +93,4 @@ You can now send a new URL."""
   #  )
   # BUTTONS = InlineKeyboardMarkup(
 
+    ERROR = "<b>ᴇʀʀᴏʀ : {}</b>"
