@@ -1,6 +1,4 @@
 
-# (c) Shrimadhav U K | # Modified by @LISA_FAN_LK | @UploadLinkToFileBot
-
 # the logging things
 import logging
 logging.basicConfig(level=logging.DEBUG,
@@ -112,3 +110,34 @@ async def Mdata03(download_directory):
                   duration = metadata.get('duration').seconds
 
           return duration
+
+async def get_flocation(download_directory, extension):
+    try:
+        file_size = os.stat(download_directory).st_size
+        return file_size, download_directory
+    except Exception:
+        pass
+    try:
+        file_directory = download_directory + ".mkv"
+        file_size = os.stat(file_directory).st_size
+        return file_size, file_directory
+    except Exception:
+        pass
+    try:
+        file_directory = download_directory + "." + extension
+        file_size = os.stat(file_directory).st_size
+        return file_size, file_directory
+    except Exception:
+        pass
+    try:
+        file_directory = os.path.splitext(download_directory)[0] + ".mkv"
+        file_size = os.stat(file_directory).st_size
+        return file_size, file_directory
+    except Exception:
+        pass
+    try:
+        file_directory = os.path.splitext(download_directory)[0] + "." + extension
+        file_size = os.stat(file_directory).st_size
+        return file_size, download_directory
+    except Exception:
+        return 0, file_directory
