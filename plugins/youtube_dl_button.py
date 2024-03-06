@@ -14,6 +14,7 @@ from config import Config
 from plugins.startmsg import Translation
 from plugins.thumbnail import *
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
+from pyrogram import enums
 from pyrogram.types import InputMediaPhoto
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes
 from database.access import clinton
