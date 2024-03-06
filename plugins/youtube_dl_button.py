@@ -182,7 +182,7 @@ async def youtube_dl_call_back(bot, update):
                 chat_id=update.message.chat.id,
                 message_id=update.message.id
             )
-            # ❤️❤️❤️❤️LISA❤️❤️❤️❤️
+            
             start_time = time.time()
             # try to upload file
             if tg_send_type == "audio":
@@ -262,10 +262,16 @@ async def youtube_dl_call_back(bot, update):
                     )
                 )
             else:
-                logger.info("Did this happen? :\\")
-            end_two = datetime.now()
-            time_taken_for_upload = (end_two - end_one).seconds
-            try:
+            thumbnail = await Gthumb01(bot, update)
+            await bot.send_document(chat_id=update.message.chat.id,
+            document=file_location,
+            thumb=thumbnail,
+            caption=description,
+            parse_mode=enums.ParseMode.HTML,
+            reply_to_message_id=update.id,
+            progress=progress_for_pyrogram,
+            progress_args=(Translation.UPLOAD_START, update.message, start_time))
+
                 shutil.rmtree(tmp_directory_for_each_user)
                 os.remove(thumbnail)
             except:
