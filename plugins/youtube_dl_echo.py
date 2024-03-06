@@ -27,7 +27,8 @@ async def echo(bot, update):
     if os.path.exists(Config.DOWNLOAD_LOCATION + "/" + str(update.chat.id) + ".json"):
         await bot.edit_message_text(
             text=Translation.WAIT_PROCESS_FINISH,
-            chat_id=update.chat.id
+            chat_id=update.chat.id,
+            reply_to_message_id=update.id
         )
         return False
     youtube_dl_username = None
@@ -98,11 +99,6 @@ async def echo(bot, update):
         stderr=asyncio.subprocess.PIPE,
     )
     stdout, stderr = await process.communicate()
-    await bot.edit_message_text(
-        text="<b>Processing... ⌛</b>",
-        reply_to_message_id=update.id,
-        chat_id=update.chat.id)
-    time.sleep(0.7)
     e_response = stderr.decode().strip()
     t_response = stdout.decode().strip()
     if e_response and "nonnumeric port" not in e_response:
