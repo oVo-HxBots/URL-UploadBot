@@ -272,8 +272,8 @@ async def youtube_dl_call_back(bot, update):
                     progress=progress_for_pyrogram,
                     progress_args=(Translation.UPLOAD_START, update.message, start_time))
  
-                shutil.rmtree(tmp_directory_for_each_user)
-                os.remove(thumbnail)
+                    shutil.rmtree(tmp_directory_for_each_user)
+                    os.remove(thumbnail)
             except:
                 pass
             await bot.edit_message_text(
